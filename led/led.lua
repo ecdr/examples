@@ -5,6 +5,8 @@ if pd.board() == "SAM7-EX256" then
   ledpin = pio.PB_20
 elseif pd.board() == "EK-LM3S8962" or pd.board() == "EK-LM3S6965" then
   ledpin = pio.PF_0
+elseif pd.board() == "EK-LM4F120" then
+  ledpin = pio.PF_1			-- Red is PF 1, Blue is PF 2, Green is PF 3
 elseif pd.board() == "EAGLE-100" then
   ledpin = pio.PE_1
 elseif pd.board() == "STR9-COMSTICK" then
@@ -60,4 +62,5 @@ print "Press any key to end this demo.\n"
 while uart.getchar( uartid, 0 ) == "" do
   cycle()
 end
+
 
