@@ -2,6 +2,9 @@
 -- use Loopback
 -- ToDo: make cantest function for other micros with CAN (mbed, STM32, Tiva)
 
+if can == nil then
+  print("No CAN do")
+else
 
 can.setup(0, 500000) -- Clock 500 kHz
 
@@ -66,19 +69,22 @@ can.send(0, canid_s, can.ID_STD, message_s )
 canid, canidtype, message = can.recv( 0 )
 
 if not (canid_s == canid) then
-	print("canid wrong" .. canid)
+	print("canid wrong")
+	print(canid)
 else
 	print("canid OK")
 end
 
 if not (canidtype == can.ID_STD) then
-	print("canid type wrong" .. canidtype)
+	print("canid type wrong")
+	print(canidtype)
 else
 	print("canid type OK")
 end
 
 if not (message_s == message) then
-	print("message wrong" .. message)
+	print("message wrong")
+	print(message)
 else
 	print("message OK")
 end
@@ -86,3 +92,5 @@ end
 -- print(canid)
 -- print(canidtype)
 -- print(message)
+
+end
