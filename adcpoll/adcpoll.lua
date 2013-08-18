@@ -8,6 +8,10 @@ elseif pd.board() == "MBED" then
   timer = 1
   adcchannels = {0,1,2,3,4,5}
   adcsmoothing = {4, 4, 16, 16, 32, 32}
+elseif pd.board() == "EK-LM4F120" then
+  timer = 1
+  adcchannels =  {0, 1, 2, 3, 4,   5,  6, 7, 8, 9, 10, 11, 12}
+  adcsmoothing = {4, 4, 4, 4, 16, 16, 16, 2, 2, 2, 32, 32,  2}
 else
   timer = 0
   adcchannels = {0,1,2,3}
