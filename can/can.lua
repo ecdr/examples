@@ -57,6 +57,9 @@ function cantest(id, loopon, silent)
   else
     cpu.w8(cantst, bit.clear(cpu.r8(cantst), 4))
   end
+
+  cpu.r8(cantst)			    -- Pre-read (need to read then delay then read again)
+
 -- bit 3 is SILENT
   if silent then
     cpu.w8(cantst, bit.set(cpu.r8(cantst), 3))
